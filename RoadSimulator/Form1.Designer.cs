@@ -45,6 +45,12 @@ namespace RoadSimulator
             this.OpenControlPanelButton.UseVisualStyleBackColor = true;
             this.OpenControlPanelButton.Click += new System.EventHandler(this.OpenControlPanelButton_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 20;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            // 
             // Road
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);

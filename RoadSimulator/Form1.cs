@@ -15,8 +15,9 @@ namespace RoadSimulator
     public partial class Road : Form
     {
         private ControlPanelForm controlPanelForm;
-        private static bool canGo = false;
+        private static bool canGo = true;
         private static Thread trainThreaad;
+        private Train mainTrain;
 
         public Road()
         {
@@ -35,6 +36,7 @@ namespace RoadSimulator
                 ControlPanelInitiation();
             }
         }
+
         private bool CheckPanelOpened()
         {
             FormCollection fc = Application.OpenForms;
@@ -57,16 +59,16 @@ namespace RoadSimulator
             controlPanelForm.Show();
         }
 
-        public static void InitiateTrain()
+        public void InitiateTrain()
         {
-            Train train = new Train(new Point(0, 280), 50);
+            mainTrain = new Train(new Point(-2000, 280), 15);
             trainThreaad = new Thread(new ParameterizedThreadStart(TrainThreadFunc));
-            trainThreaad.Start(train);
+            trainThreaad.Start(mainTrain);//BOXING
         }
 
         private static void TrainThreadFunc(object obj)
         {
-            Train train = (Train)obj;
+            Train train = (Train)obj;//UNBOXING
             while (true)
             {
                 canGo = train.Move();
@@ -74,14 +76,12 @@ namespace RoadSimulator
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            Invalidate();
-        }
-
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
+
+            if (mainTrain != null)
+                e.Graphics.DrawImage(mainTrain.btm, mainTrain.Position);
 
             if (canGo)
             {
@@ -93,6 +93,11 @@ namespace RoadSimulator
                 e.Graphics.FillEllipse(Brushes.Red, 737, 272, 15, 15);
                 e.Graphics.FillEllipse(Brushes.Red, 879, 343, 15, 15);
             }
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            Invalidate();
         }
     }
 }

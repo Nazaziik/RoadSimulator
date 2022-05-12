@@ -21,8 +21,16 @@ namespace RoadSimulator
 
         private void TrainButton_Click(object sender, EventArgs e)
         {
-            Road.InitiateTrain();
-        }
+            FormCollection fc = Application.OpenForms;
 
+            foreach (Form frm in fc)
+            {
+                if (frm.Name == "Road")
+                {
+                    Road road = (Road)frm;//UNBOXING
+                    road.InitiateTrain();
+                }
+            }
+        }
     }
 }

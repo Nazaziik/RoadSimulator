@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +26,8 @@ namespace RoadSimulator.Classes
 
         public Train(Point position, int speed)
         {
-            btm = new Bitmap(@"D:\Learn\Systemy operacyjne\Project\SourceToProject\Train.png", true);
+            Bitmap demoBtm = new Bitmap(@"D:\Learn\Systemy operacyjne\Project\SourceToProject\Train.png", true);
+            btm = new Bitmap(demoBtm, new Size(990, 90));
             _position = position;
             btm.SetResolution(150f, 150f);
             this._speed = speed;
