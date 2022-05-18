@@ -18,6 +18,7 @@ namespace RoadSimulator
         private static bool canGo = true;
         private static Thread trainThreaad;
         private Train mainTrain;
+        private Random random = new Random();
 
         public Road()
         {
@@ -61,7 +62,7 @@ namespace RoadSimulator
 
         public void InitiateTrain()
         {
-            mainTrain = new Train(new Point(-2000, 280), 15);
+            mainTrain = new Train(10, random.Next(0,2) == 0);//Maybe use singleton pattern
             trainThreaad = new Thread(new ParameterizedThreadStart(TrainThreadFunc));
             trainThreaad.Start(mainTrain);//BOXING
         }
@@ -72,7 +73,7 @@ namespace RoadSimulator
             while (true)
             {
                 canGo = train.Move();
-                Thread.Sleep(40);
+                Thread.Sleep(23);
             }
         }
 
