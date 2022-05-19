@@ -37,7 +37,7 @@ namespace RoadSimulator
             // OpenControlPanelButton
             // 
             this.OpenControlPanelButton.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.OpenControlPanelButton.Location = new System.Drawing.Point(948, 12);
+            this.OpenControlPanelButton.Location = new System.Drawing.Point(947, 12);
             this.OpenControlPanelButton.Name = "OpenControlPanelButton";
             this.OpenControlPanelButton.Size = new System.Drawing.Size(102, 23);
             this.OpenControlPanelButton.TabIndex = 0;

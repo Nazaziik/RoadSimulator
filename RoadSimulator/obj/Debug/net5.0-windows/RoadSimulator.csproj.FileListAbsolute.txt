@@ -18,3 +18,22 @@ D:\Learn\Systemy operacyjne\Project\RoadSimulator\obj\Debug\net5.0-windows\RoadS
 D:\Learn\Systemy operacyjne\Project\RoadSimulator\obj\Debug\net5.0-windows\RoadSimulator.genruntimeconfig.cache
 D:\Learn\Systemy operacyjne\Project\RoadSimulator\obj\Debug\net5.0-windows\RoadSimulator.Properties.Resources.resources
 D:\Learn\Systemy operacyjne\Project\RoadSimulator\obj\Debug\net5.0-windows\RoadSimulator.ControlPanelForm.resources
+D:\Learn\Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\Train\TrainLeft.png
+D:\Learn\Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\Train\TrainRight.png
+D:\Learn\Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\bus\BusDown.png
+D:\Learn\Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\bus\BusLeft.png
+D:\Learn\Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\bus\BusRight.png
+D:\Learn\Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\bus\BusUp.png
+D:\Learn\Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\car (fast)\CarFastDown.png
+D:\Learn\Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\car (fast)\CarFastLeft.png
+D:\Learn\Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\car (fast)\CarFastRight.png
+D:\Learn\Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\car (fast)\CarFastUp.png
+D:\Learn\Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\Car (slow)\CarSlowDown.png
+D:\Learn\Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\Car (slow)\CarSlowLeft.png
+D:\Learn\Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\Car (slow)\CarSlowRight.png
+D:\Learn\Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\Car (slow)\CarSlowUp.png
+D:\Learn\Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\Jeep\JeepDown.png
+D:\Learn\Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\Jeep\JeepLeft.png
+D:\Learn\Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\Jeep\JeepRight.png
+D:\Learn\Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\Jeep\JeepUp.png
+D:\Learn\Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\mapa_v6.png

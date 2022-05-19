@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,7 +53,6 @@ namespace RoadSimulator.Classes
 
                 _position.X += _speed;
 
-
                 if (_position.X > -1200 && _position.X < 1200)
                     return false;
                 else
@@ -60,7 +60,7 @@ namespace RoadSimulator.Classes
             }
             else
             {
-                if (_position.X < -500)
+                if (_position.X < -700)
                 {
                     moveRight = true;
                     _position.X = MakeTrainSpawnPoint(true);
@@ -89,9 +89,9 @@ namespace RoadSimulator.Classes
             Bitmap demoBtm;
 
             if (moveRight)
-                demoBtm = new Bitmap(@"D:\Learn\Systemy operacyjne\Project\SourceToProject\cars\Train\TrainRight.png", true);
+                demoBtm = new Bitmap(Directory.GetCurrentDirectory() + @"\SourceToProject\cars\Train\TrainRight.png", true);
             else
-                demoBtm = new Bitmap(@"D:\Learn\Systemy operacyjne\Project\SourceToProject\cars\Train\TrainLeft.png", true);
+                demoBtm = new Bitmap(Directory.GetCurrentDirectory() + @"\SourceToProject\cars\Train\TrainLeft.png", true);
 
             this.btm = new Bitmap(demoBtm, new Size(990, 90));
             this.btm.SetResolution(150f, 150f);

@@ -19,7 +19,10 @@ namespace RoadSimulator
         private static Thread trainThreaad;
         private Train mainTrain;
         private Random random = new Random();
+        private Railway railway = new Railway();
+        Pen pen = new Pen(Color.Red);
 
+        #region FormSettings
         public Road()
         {
             InitializeComponent();
@@ -30,6 +33,34 @@ namespace RoadSimulator
             ControlPanelInitiation();
         }
 
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+
+            if (mainTrain != null)
+                e.Graphics.DrawImage(mainTrain.btm, mainTrain.Position);
+
+            if (canGo)
+            {
+                e.Graphics.FillEllipse(Brushes.LightGreen, 737, 272, 15, 15);
+                e.Graphics.FillEllipse(Brushes.LightGreen, 879, 343, 15, 15);
+            }
+            else
+            {
+                e.Graphics.DrawRectangle(pen, railway.rectangle1);
+                e.Graphics.DrawRectangle(pen, railway.rectangle2);
+                e.Graphics.FillEllipse(Brushes.Red, 737, 272, 15, 15);
+                e.Graphics.FillEllipse(Brushes.Red, 879, 343, 15, 15);
+            }
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            Invalidate();
+        }
+        #endregion
+
+        #region ControlPanelOrganization
         private void OpenControlPanelButton_Click(object sender, EventArgs e)
         {
             if (!CheckPanelOpened())
@@ -59,10 +90,12 @@ namespace RoadSimulator
             controlPanelForm.Location = new Point(1090, 100);
             controlPanelForm.Show();
         }
+        #endregion
 
+        #region TrainOrganization
         public void InitiateTrain()
         {
-            mainTrain = new Train(10, random.Next(0,2) == 0);//Maybe use singleton pattern
+            mainTrain = new Train(10, random.Next(0, 2) == 0);//use singleton pattern
             trainThreaad = new Thread(new ParameterizedThreadStart(TrainThreadFunc));
             trainThreaad.Start(mainTrain);//BOXING
         }
@@ -76,29 +109,7 @@ namespace RoadSimulator
                 Thread.Sleep(23);
             }
         }
+        #endregion
 
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            base.OnPaint(e);
-
-            if (mainTrain != null)
-                e.Graphics.DrawImage(mainTrain.btm, mainTrain.Position);
-
-            if (canGo)
-            {
-                e.Graphics.FillEllipse(Brushes.LightGreen, 737, 272, 15, 15);
-                e.Graphics.FillEllipse(Brushes.LightGreen, 879, 343, 15, 15);
-            }
-            else
-            {
-                e.Graphics.FillEllipse(Brushes.Red, 737, 272, 15, 15);
-                e.Graphics.FillEllipse(Brushes.Red, 879, 343, 15, 15);
-            }
-        }
-
-        private void timer1_Tick_1(object sender, EventArgs e)
-        {
-            Invalidate();
-        }
     }
 }
