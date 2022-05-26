@@ -14,23 +14,32 @@ namespace RoadSimulator
 {
     public partial class ControlPanelForm : Form
     {
+        private FormCollection fc;
+        private Road road;
+
         public ControlPanelForm()
         {
             InitializeComponent();
-        }
 
-        private void TrainButton_Click(object sender, EventArgs e)
-        {
-            FormCollection fc = Application.OpenForms;
+            fc = Application.OpenForms;
 
             foreach (Form frm in fc)
             {
                 if (frm.Name == "Road")
                 {
-                    Road road = (Road)frm;//UNBOXING
-                    road.InitiateTrain();
+                    road = (Road)frm;//UNBOXING
                 }
             }
+        }
+
+        private void TrainButton_Click(object sender, EventArgs e)
+        {
+            road.InitiateTrain();
+        }
+
+        private void AddCarButton_Click(object sender, EventArgs e)
+        {
+            //road.InitiateCar();
         }
     }
 }

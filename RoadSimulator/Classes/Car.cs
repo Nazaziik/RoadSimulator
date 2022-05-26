@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RoadSimulator.Classes
 {
-    class Car
+    public class Car
     {
         private Random random;
         public Bitmap btm;
@@ -25,85 +25,109 @@ namespace RoadSimulator.Classes
             get { return _speed; }
         }
 
-        bool stop = false;
-        bool moveDown = false;
+        //bool stop = false;
+        bool moveFromTop;
 
-        public Car(Point point, int speed, bool move)
+        public Car()
         {
             random = new Random();
-            btm = new Bitmap(@"C:\Users\deduhan1\source\repos\System O. Project\System O. Project\Resources\car.png", true);
-            _position = point;
-            if (move)
-                moveDown = true;
-            this._speed = speed;
-            if (moveDown)
+
+            SetNewCar();
+
+            if (random.Next(0, 2) == 0)
+            {
+                _position = new Point(-100, 205);
+                moveFromTop = true;
+            }
+            else
+            {
+                _position = new Point(1130, 610);
+                moveFromTop = true;
+            }
+
+            if (moveFromTop)
             {
                 btm.RotateFlip(RotateFlipType.Rotate90FlipY);
-                RFront = new Rectangle(new Point(_position.X, _position.Y + 155), new Size(75, 35));
-                RBeck = new Rectangle(new Point(_position.X, _position.Y - 35), new Size(75, 180));
+                RFront = new Rectangle(new Point(_position.X + 155, _position.Y), new Size(75, 35));
+                RBeck = new Rectangle(new Point(_position.X - 35, _position.Y), new Size(75, 180));
             }
             else
             {
                 btm.RotateFlip(RotateFlipType.Rotate90FlipX);
-                RFront = new Rectangle(new Point(_position.X, _position.Y - 35), new Size(75, 35));
-                RBeck = new Rectangle(new Point(_position.X, _position.Y + 10), new Size(75, 180));
+                RFront = new Rectangle(new Point(_position.X - 35, _position.Y), new Size(75, 35));
+                RBeck = new Rectangle(new Point(_position.X + 10, _position.Y), new Size(75, 180));
             }
-            btm.SetResolution(400f, 400f);
         }
 
         public void Move()
         {
-            if (moveDown)
+            IfCarFinished();
+
+            if (moveFromTop)
             {
-                RFront.Y += _speed;
-                RBeck.Y += _speed;
-                _position.Y += _speed;
+                RFront.X += _speed;
+                RBeck.X += _speed;
+                _position.X += _speed;
             }
             else
             {
-                RFront.Y -= _speed;
-                RBeck.Y -= _speed;
-                _position.Y -= _speed;
+                RFront.X -= _speed;
+                RBeck.X -= _speed;
+                _position.X -= _speed;
             }
         }
 
-        public void StopCar(bool go, Railway r, List<Car> cars)
+        private void IfCarFinished()
         {
-            if (stop && _speed != 0) _speed--;
-            if (!stop && _speed != 7) _speed++;
-
-            if (!go && (RFront.IntersectsWith(r.rectangle1) || RFront.IntersectsWith(r.rectangle2)))
-                stop = true;
-            else if (ShowValue(cars))
-                stop = true;
-            else
-                stop = false;
-        }
-
-        public bool DelCar()
-        {
-            if (_position.Y > 1600)
+            if (_position.X > 1250)
             {
+                _position.X = random.Next(-1000, -400);
                 _position.Y = random.Next(-1000, -400);
                 RFront = new Rectangle(new Point(_position.X, _position.Y + 155), new Size(75, 35));
                 RBeck = new Rectangle(new Point(_position.X, _position.Y - 35), new Size(75, 180));
-                return true;
+                SetNewCar();
             }
-            if (_position.Y < -1100)
+            else if (_position.X < -300)
             {
                 _position.Y = random.Next(900, 1500);
                 RFront = new Rectangle(new Point(_position.X, _position.Y - 35), new Size(75, 35));
                 RBeck = new Rectangle(new Point(_position.X, _position.Y + 10), new Size(75, 180));
-                return true;
+                SetNewCar();
             }
-            return false;
         }
-
-        private bool ShowValue(List<Car> cars)
+        /*
+        private bool CheckIfDanger(List<Car> cars)
         {
             foreach (Car c in cars)
                 if (RFront.IntersectsWith(c.RBeck)) return true;
             return false;
+        }
+        */
+        private void SetNewCar()
+        {
+            _speed = random.Next(5, 25);
+            Bitmap demoBtm;
+
+            if (_speed >= 5 && _speed < 10)
+            {
+                demoBtm = new Bitmap(@"D:\Learn\Systemy operacyjne\Project\RoadSimulator\SourceToProject\cars\bus\BusUp.png", true);
+                this.btm = new Bitmap(demoBtm, new Size(70, 60));
+            }
+            else if (_speed >= 10 && _speed < 15)
+            {
+                demoBtm = new Bitmap(@"D:\Learn\Systemy operacyjne\Project\RoadSimulator\SourceToProject\cars\bus\JeepUp.png", true);
+                this.btm = new Bitmap(demoBtm, new Size(60, 50));
+            }
+            else if (_speed >= 15 && _speed < 20)
+            {
+                demoBtm = new Bitmap(@"D:\Learn\Systemy operacyjne\Project\RoadSimulator\SourceToProject\cars\bus\CarSlowUp.png", true);
+                this.btm = new Bitmap(demoBtm, new Size(55, 40));
+            }
+            else
+            {
+                demoBtm = new Bitmap(@"D:\Learn\Systemy operacyjne\Project\RoadSimulator\SourceToProject\cars\bus\CarFastUp.png", true);
+                this.btm = new Bitmap(demoBtm, new Size(55, 40));
+            }
         }
     }
 }

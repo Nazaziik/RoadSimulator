@@ -30,6 +30,7 @@ namespace RoadSimulator
         private void InitializeComponent()
         {
             this.TrainButton = new System.Windows.Forms.Button();
+            this.AddCarButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // TrainButton
@@ -42,11 +43,22 @@ namespace RoadSimulator
             this.TrainButton.UseVisualStyleBackColor = true;
             this.TrainButton.Click += new System.EventHandler(this.TrainButton_Click);
             // 
+            // AddCarButton
+            // 
+            this.AddCarButton.Location = new System.Drawing.Point(158, 114);
+            this.AddCarButton.Name = "AddCarButton";
+            this.AddCarButton.Size = new System.Drawing.Size(145, 40);
+            this.AddCarButton.TabIndex = 1;
+            this.AddCarButton.Text = "Add Car";
+            this.AddCarButton.UseVisualStyleBackColor = true;
+            this.AddCarButton.Click += new System.EventHandler(this.AddCarButton_Click);
+            // 
             // ControlPanelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 761);
+            this.Controls.Add(this.AddCarButton);
             this.Controls.Add(this.TrainButton);
             this.Name = "ControlPanelForm";
             this.Text = "Control Panel";
@@ -57,5 +69,6 @@ namespace RoadSimulator
         #endregion
 
         private System.Windows.Forms.Button TrainButton;
+        private System.Windows.Forms.Button AddCarButton;
     }
 }

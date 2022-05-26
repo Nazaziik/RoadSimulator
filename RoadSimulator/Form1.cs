@@ -20,7 +20,11 @@ namespace RoadSimulator
         private Train mainTrain;
         private Random random = new Random();
         private Railway railway = new Railway();
-        Pen pen = new Pen(Color.Red);
+        private Pen pen = new Pen(Color.Red);
+        public List<Car> carList;
+        public List<Thread> threadList;
+        private Car car;
+        private Thread carThread;
 
         #region FormSettings
         public Road()
@@ -30,7 +34,8 @@ namespace RoadSimulator
             this.Location = new Point(30, 100);
             //this.BackgroundImage = new Bitmap(@"D:\Learn\Systemy operacyjne\Project\SourceToProject\mapa_v6.png", true);
             //this.BackgroundImageLayout = ImageLayout.Stretch;
-            ControlPanelInitiation();
+            carList = new List<Car>();
+            threadList = new List<Thread>();
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -39,6 +44,14 @@ namespace RoadSimulator
 
             if (mainTrain != null)
                 e.Graphics.DrawImage(mainTrain.btm, mainTrain.Position);
+
+            if (carList.Count > 0)
+            {
+                foreach (Car car in carList)
+                {
+                    e.Graphics.DrawImage(car.btm, car.Position);
+                }
+            }
 
             if (canGo)
             {
@@ -107,6 +120,28 @@ namespace RoadSimulator
             {
                 canGo = train.Move();
                 Thread.Sleep(23);
+            }
+        }
+        #endregion
+
+        #region CarOrganization
+        public void InitiateCar()
+        {
+            car = new Car();
+            carList.Add(car);
+            carThread = new Thread(new ParameterizedThreadStart(CarThreadFunc));
+            threadList.Add(carThread);
+            CarsCountLabel.Text = carList.Count.ToString();
+            carThread.Start(car);//BOXING
+        }
+
+        private void CarThreadFunc(object obj)
+        {
+            Car car = (Car)obj;//UNBOXING
+            while (true)
+            {
+                car.Move();
+                Thread.Sleep(30);
             }
         }
         #endregion
