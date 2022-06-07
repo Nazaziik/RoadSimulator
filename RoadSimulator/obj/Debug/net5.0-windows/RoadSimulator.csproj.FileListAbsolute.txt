@@ -17,7 +17,6 @@ D:\Learn\Systemy operacyjne\Project\RoadSimulator\obj\Debug\net5.0-windows\ref\R
 D:\Learn\Systemy operacyjne\Project\RoadSimulator\obj\Debug\net5.0-windows\RoadSimulator.pdb
 D:\Learn\Systemy operacyjne\Project\RoadSimulator\obj\Debug\net5.0-windows\RoadSimulator.genruntimeconfig.cache
 D:\Learn\Systemy operacyjne\Project\RoadSimulator\obj\Debug\net5.0-windows\RoadSimulator.Properties.Resources.resources
-D:\Learn\Systemy operacyjne\Project\RoadSimulator\obj\Debug\net5.0-windows\RoadSimulator.ControlPanelForm.resources
 D:\Learn\Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\Train\TrainLeft.png
 D:\Learn\Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\Train\TrainRight.png
 D:\Learn\Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\bus\BusDown.png

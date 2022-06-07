@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace RoadSimulator.Classes
 {
-    class Railway
+    public static class Railway
     {
-        public Rectangle rectangle1;
-        public Rectangle rectangle2;
+        public static Rectangle rectangle1;
+        public static Rectangle rectangle2;
 
-        public Railway()
+        static Railway()
         {
             rectangle1 = new Rectangle(new Point(756, 274), new Size(55, 5));
             rectangle2 = new Rectangle(new Point(824, 339), new Size(55, 5));

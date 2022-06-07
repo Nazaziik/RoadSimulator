@@ -14,17 +14,15 @@ namespace RoadSimulator
 {
     public partial class Road : Form
     {
-        private ControlPanelForm controlPanelForm;
         private static bool canGo = true;
         private static Thread trainThreaad;
         private Train mainTrain;
         private Random random = new Random();
-        private Railway railway = new Railway();
         private Pen pen = new Pen(Color.Red);
-        public List<Car> carList;
-        public List<Thread> threadList;
         private Car car;
         private Thread carThread;
+        public static List<Car> carList;
+        public List<Thread> threadList;
 
         #region FormSettings
         public Road()
@@ -32,10 +30,9 @@ namespace RoadSimulator
             InitializeComponent();
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(30, 100);
-            //this.BackgroundImage = new Bitmap(@"D:\Learn\Systemy operacyjne\Project\SourceToProject\mapa_v6.png", true);
-            //this.BackgroundImageLayout = ImageLayout.Stretch;
             carList = new List<Car>();
             threadList = new List<Thread>();
+            InitiateTrain();
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -60,48 +57,16 @@ namespace RoadSimulator
             }
             else
             {
-                e.Graphics.DrawRectangle(pen, railway.rectangle1);
-                e.Graphics.DrawRectangle(pen, railway.rectangle2);
+                e.Graphics.DrawRectangle(pen, Railway.rectangle1);
+                e.Graphics.DrawRectangle(pen, Railway.rectangle2);
                 e.Graphics.FillEllipse(Brushes.Red, 737, 272, 15, 15);
                 e.Graphics.FillEllipse(Brushes.Red, 879, 343, 15, 15);
             }
         }
 
-        private void timer1_Tick_1(object sender, EventArgs e)
+        private void Timer1_Tick_1(object sender, EventArgs e)
         {
             Invalidate();
-        }
-        #endregion
-
-        #region ControlPanelOrganization
-        private void OpenControlPanelButton_Click(object sender, EventArgs e)
-        {
-            if (!CheckPanelOpened())
-            {
-                ControlPanelInitiation();
-            }
-        }
-
-        private bool CheckPanelOpened()
-        {
-            FormCollection fc = Application.OpenForms;
-
-            foreach (Form frm in fc)
-            {
-                if (frm.Name == "ControlPanelForm")
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        private void ControlPanelInitiation()
-        {
-            controlPanelForm = new ControlPanelForm();
-            controlPanelForm.StartPosition = FormStartPosition.Manual;
-            controlPanelForm.Location = new Point(1090, 100);
-            controlPanelForm.Show();
         }
         #endregion
 
@@ -113,12 +78,18 @@ namespace RoadSimulator
             trainThreaad.Start(mainTrain);//BOXING
         }
 
-        private static void TrainThreadFunc(object obj)
+        private void TrainThreadFunc(object obj)
         {
             Train train = (Train)obj;//UNBOXING
             while (true)
             {
-                canGo = train.Move();
+                if (InvokeRequired)
+                {
+                    Invoke(new Action(delegate ()
+                    {
+                        canGo = train.Move();
+                    }));
+                }
                 Thread.Sleep(23);
             }
         }
@@ -140,11 +111,30 @@ namespace RoadSimulator
             Car car = (Car)obj;//UNBOXING
             while (true)
             {
-                car.Move();
-                Thread.Sleep(30);
+                if (InvokeRequired)
+                {
+                    Invoke(new Action(delegate ()
+                    {
+                        car.Move();
+                    }));
+                }
+                Thread.Sleep(16);
             }
         }
         #endregion
 
+        private void CarAddButton_Click(object sender, EventArgs e)
+        {
+            InitiateCar();
+        }
+
+        private void CarDeleteButton_Click(object sender, EventArgs e)
+        {
+            if (carList.Count > 3)
+            {
+                carList.RemoveAt(random.Next(0, carList.Count));
+                CarsCountLabel.Text = carList.Count.ToString();
+            }
+        }
     }
 }

@@ -30,37 +30,49 @@ namespace RoadSimulator
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.OpenControlPanelButton = new System.Windows.Forms.Button();
+            this.CarAddButton = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.CarsCountLabel = new System.Windows.Forms.Label();
+            this.CarDeleteButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // OpenControlPanelButton
+            // CarAddButton
             // 
-            this.OpenControlPanelButton.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.OpenControlPanelButton.Location = new System.Drawing.Point(947, 12);
-            this.OpenControlPanelButton.Name = "OpenControlPanelButton";
-            this.OpenControlPanelButton.Size = new System.Drawing.Size(102, 23);
-            this.OpenControlPanelButton.TabIndex = 0;
-            this.OpenControlPanelButton.Text = "Open Control Panel";
-            this.OpenControlPanelButton.UseVisualStyleBackColor = true;
-            this.OpenControlPanelButton.Click += new System.EventHandler(this.OpenControlPanelButton_Click);
+            this.CarAddButton.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CarAddButton.Location = new System.Drawing.Point(12, 12);
+            this.CarAddButton.Name = "CarAddButton";
+            this.CarAddButton.Size = new System.Drawing.Size(102, 23);
+            this.CarAddButton.TabIndex = 0;
+            this.CarAddButton.Text = "Add car";
+            this.CarAddButton.UseVisualStyleBackColor = true;
+            this.CarAddButton.Click += new System.EventHandler(this.CarAddButton_Click);
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 20;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick_1);
             // 
             // CarsCountLabel
             // 
             this.CarsCountLabel.AutoSize = true;
             this.CarsCountLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CarsCountLabel.Location = new System.Drawing.Point(952, 38);
+            this.CarsCountLabel.Location = new System.Drawing.Point(84, 38);
             this.CarsCountLabel.Name = "CarsCountLabel";
             this.CarsCountLabel.Size = new System.Drawing.Size(87, 21);
             this.CarsCountLabel.TabIndex = 1;
             this.CarsCountLabel.Text = "Cars Count";
+            // 
+            // CarDeleteButton
+            // 
+            this.CarDeleteButton.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CarDeleteButton.Location = new System.Drawing.Point(142, 12);
+            this.CarDeleteButton.Name = "CarDeleteButton";
+            this.CarDeleteButton.Size = new System.Drawing.Size(102, 23);
+            this.CarDeleteButton.TabIndex = 2;
+            this.CarDeleteButton.Text = "Delete car";
+            this.CarDeleteButton.UseVisualStyleBackColor = true;
+            this.CarDeleteButton.Click += new System.EventHandler(this.CarDeleteButton_Click);
             // 
             // Road
             // 
@@ -69,9 +81,11 @@ namespace RoadSimulator
             this.BackgroundImage = global::RoadSimulator.Properties.Resources.mapa_v6;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1051, 761);
+            this.Controls.Add(this.CarDeleteButton);
             this.Controls.Add(this.CarsCountLabel);
-            this.Controls.Add(this.OpenControlPanelButton);
+            this.Controls.Add(this.CarAddButton);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Road";
             this.Text = "Road Simulator";
             this.ResumeLayout(false);
@@ -81,9 +95,10 @@ namespace RoadSimulator
 
         #endregion
 
-        private System.Windows.Forms.Button OpenControlPanelButton;
+        private System.Windows.Forms.Button CarAddButton;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label CarsCountLabel;
+        private System.Windows.Forms.Button CarDeleteButton;
     }
 }
 

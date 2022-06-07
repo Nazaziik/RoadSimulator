@@ -9,7 +9,6 @@ namespace RoadSimulator.Classes
 {
     public class Car
     {
-        private Random random;
         public Bitmap btm;
         public Rectangle RFront, RBeck;
 
@@ -25,109 +24,115 @@ namespace RoadSimulator.Classes
             get { return _speed; }
         }
 
-        //bool stop = false;
+        Random random;
         bool moveFromTop;
+        bool moveRight;
 
         public Car()
         {
             random = new Random();
 
             SetNewCar();
-
-            if (random.Next(0, 2) == 0)
-            {
-                _position = new Point(-100, 205);
-                moveFromTop = true;
-            }
-            else
-            {
-                _position = new Point(1130, 610);
-                moveFromTop = true;
-            }
-
-            if (moveFromTop)
-            {
-                btm.RotateFlip(RotateFlipType.Rotate90FlipY);
-                RFront = new Rectangle(new Point(_position.X + 155, _position.Y), new Size(75, 35));
-                RBeck = new Rectangle(new Point(_position.X - 35, _position.Y), new Size(75, 180));
-            }
-            else
-            {
-                btm.RotateFlip(RotateFlipType.Rotate90FlipX);
-                RFront = new Rectangle(new Point(_position.X - 35, _position.Y), new Size(75, 35));
-                RBeck = new Rectangle(new Point(_position.X + 10, _position.Y), new Size(75, 180));
-            }
         }
 
         public void Move()
         {
             IfCarFinished();
-
-            if (moveFromTop)
+            if (!CheckIfDanger())
             {
-                RFront.X += _speed;
-                RBeck.X += _speed;
-                _position.X += _speed;
-            }
-            else
-            {
-                RFront.X -= _speed;
-                RBeck.X -= _speed;
-                _position.X -= _speed;
+                if (moveRight)
+                {
+                    RFront.X += _speed;
+                    RBeck.X += _speed;
+                    _position.X += _speed;
+                    ///////////////////////////////////////////////add moving with pos.Y on turns (3 points: start turning; mid(rotate car); end mowing pos.Y)
+                }
+                else
+                {
+                    RFront.X -= _speed;
+                    RBeck.X -= _speed;
+                    _position.X -= _speed;
+                    ///////////////////////////////////////////////add moving with pos.Y on turns (3 points: start turning; mid(rotate car); end mowing pos.Y)
+                }
             }
         }
 
-        private void IfCarFinished()
+        public bool IfCarFinished()
         {
             if (_position.X > 1250)
             {
-                _position.X = random.Next(-1000, -400);
-                _position.Y = random.Next(-1000, -400);
-                RFront = new Rectangle(new Point(_position.X, _position.Y + 155), new Size(75, 35));
-                RBeck = new Rectangle(new Point(_position.X, _position.Y - 35), new Size(75, 180));
                 SetNewCar();
+                return true;
             }
             else if (_position.X < -300)
             {
-                _position.Y = random.Next(900, 1500);
-                RFront = new Rectangle(new Point(_position.X, _position.Y - 35), new Size(75, 35));
-                RBeck = new Rectangle(new Point(_position.X, _position.Y + 10), new Size(75, 180));
                 SetNewCar();
+                return true;
             }
-        }
-        /*
-        private bool CheckIfDanger(List<Car> cars)
-        {
-            foreach (Car c in cars)
-                if (RFront.IntersectsWith(c.RBeck)) return true;
             return false;
         }
-        */
+
+        private bool CheckIfDanger()
+        {
+            foreach (Car c in Road.carList)
+            {
+                if (RFront.IntersectsWith(c.RBeck))
+                {
+                    return true;
+                }
+            }
+            if (RFront.IntersectsWith(Railway.rectangle1) || RFront.IntersectsWith(Railway.rectangle2))
+                return true;
+
+            return false;
+        }
+
         private void SetNewCar()
         {
-            _speed = random.Next(5, 25);
+            _speed = random.Next(5, 25);///////////////////////////////Change speed
             Bitmap demoBtm;
 
             if (_speed >= 5 && _speed < 10)
             {
                 demoBtm = new Bitmap(@"D:\Learn\Systemy operacyjne\Project\RoadSimulator\SourceToProject\cars\bus\BusUp.png", true);
-                this.btm = new Bitmap(demoBtm, new Size(70, 60));
+                this.btm = new Bitmap(demoBtm, new Size(70, 60));/////////////////////correct car size
             }
             else if (_speed >= 10 && _speed < 15)
             {
-                demoBtm = new Bitmap(@"D:\Learn\Systemy operacyjne\Project\RoadSimulator\SourceToProject\cars\bus\JeepUp.png", true);
-                this.btm = new Bitmap(demoBtm, new Size(60, 50));
+                demoBtm = new Bitmap(@"D:\Learn\Systemy operacyjne\Project\RoadSimulator\SourceToProject\cars\Jeep\JeepUp.png", true);
+                this.btm = new Bitmap(demoBtm, new Size(60, 50));/////////////////////correct car size
             }
             else if (_speed >= 15 && _speed < 20)
             {
-                demoBtm = new Bitmap(@"D:\Learn\Systemy operacyjne\Project\RoadSimulator\SourceToProject\cars\bus\CarSlowUp.png", true);
-                this.btm = new Bitmap(demoBtm, new Size(55, 40));
+                demoBtm = new Bitmap(@"D:\Learn\Systemy operacyjne\Project\RoadSimulator\SourceToProject\cars\Car (slow)\CarSlowUp.png", true);
+                this.btm = new Bitmap(demoBtm, new Size(55, 40));/////////////////////correct car size
             }
             else
             {
-                demoBtm = new Bitmap(@"D:\Learn\Systemy operacyjne\Project\RoadSimulator\SourceToProject\cars\bus\CarFastUp.png", true);
-                this.btm = new Bitmap(demoBtm, new Size(55, 40));
+                demoBtm = new Bitmap(@"D:\Learn\Systemy operacyjne\Project\RoadSimulator\SourceToProject\cars\car (fast)\CarFastUp.png", true);
+                this.btm = new Bitmap(demoBtm, new Size(55, 40));/////////////////////correct car size
             }
+
+            if (random.Next(0, 2) == 0)
+            {
+                _position.X = random.Next(-400, -100);/////////////////////////correct car spawn point
+                _position.Y = 205;/////////////////////correct car spawn point
+                btm.RotateFlip(RotateFlipType.Rotate90FlipY);
+                RFront = new Rectangle(new Point(_position.X + 155, _position.Y), new Size(30, 35));/////////////////////////change rectangle size and pos
+                RBeck = new Rectangle(new Point(_position.X - 35, _position.Y), new Size(30, 180));/////////////////////////change rectangle size and pos
+                moveFromTop = true;
+            }
+            else
+            {
+                _position.X = random.Next(1150, 1450);/////////////////////////
+                _position.Y = 610;/////////////////////correct car spawn point
+                btm.RotateFlip(RotateFlipType.Rotate90FlipX);
+                RFront = new Rectangle(new Point(_position.X - 35, _position.Y), new Size(30, 35));/////////////////////////change rectangle size and pos
+                RBeck = new Rectangle(new Point(_position.X + 10, _position.Y), new Size(30, 180));/////////////////////////change rectangle size and pos
+                moveFromTop = false;
+            }
+
+            moveRight = moveFromTop;
         }
     }
 }
