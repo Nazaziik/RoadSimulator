@@ -118,8 +118,8 @@ namespace RoadSimulator.Classes
                 _position.X = random.Next(-400, -100);/////////////////////////correct car spawn point
                 _position.Y = 205;/////////////////////correct car spawn point
                 btm.RotateFlip(RotateFlipType.Rotate90FlipY);
-                RFront = new Rectangle(new Point(_position.X + 155, _position.Y), new Size(30, 35));/////////////////////////change rectangle size and pos
-                RBeck = new Rectangle(new Point(_position.X - 35, _position.Y), new Size(30, 180));/////////////////////////change rectangle size and pos
+                RFront = new Rectangle(new Point(_position.X + 35, _position.Y + 10), new Size(15, 35));/////////////////////////change rectangle size and pos
+                RBeck = new Rectangle(new Point(_position.X - 10, _position.Y + 10), new Size(15, 35));/////////////////////////change rectangle size and pos
                 moveFromTop = true;
             }
             else
@@ -127,8 +127,8 @@ namespace RoadSimulator.Classes
                 _position.X = random.Next(1150, 1450);/////////////////////////
                 _position.Y = 610;/////////////////////correct car spawn point
                 btm.RotateFlip(RotateFlipType.Rotate90FlipX);
-                RFront = new Rectangle(new Point(_position.X - 35, _position.Y), new Size(30, 35));/////////////////////////change rectangle size and pos
-                RBeck = new Rectangle(new Point(_position.X + 10, _position.Y), new Size(30, 180));/////////////////////////change rectangle size and pos
+                RFront = new Rectangle(new Point(_position.X - 15, _position.Y + 10), new Size(15, 35));/////////////////////////change rectangle size and pos
+                RBeck = new Rectangle(new Point(_position.X + 30, _position.Y + 10), new Size(15, 35));/////////////////////////change rectangle size and pos
                 moveFromTop = false;
             }
 

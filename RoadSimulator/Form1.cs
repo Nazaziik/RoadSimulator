@@ -57,10 +57,23 @@ namespace RoadSimulator
             }
             else
             {
-                e.Graphics.DrawRectangle(pen, Railway.rectangle1);
-                e.Graphics.DrawRectangle(pen, Railway.rectangle2);
                 e.Graphics.FillEllipse(Brushes.Red, 737, 272, 15, 15);
                 e.Graphics.FillEllipse(Brushes.Red, 879, 343, 15, 15);
+            }
+
+            if (checkBox1.Checked)
+            {
+                if (!canGo)
+                {
+                    e.Graphics.DrawRectangle(pen, Railway.rectangle1);
+                    e.Graphics.DrawRectangle(pen, Railway.rectangle2);
+                }
+
+                foreach (Car car in carList)
+                {
+                    e.Graphics.DrawRectangle(pen, car.RBeck);
+                    e.Graphics.DrawRectangle(pen, car.RFront);
+                }
             }
         }
 

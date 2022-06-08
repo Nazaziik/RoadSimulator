@@ -34,6 +34,7 @@ namespace RoadSimulator
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.CarsCountLabel = new System.Windows.Forms.Label();
             this.CarDeleteButton = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // CarAddButton
@@ -74,6 +75,16 @@ namespace RoadSimulator
             this.CarDeleteButton.UseVisualStyleBackColor = true;
             this.CarDeleteButton.Click += new System.EventHandler(this.CarDeleteButton_Click);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(268, 15);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(140, 19);
+            this.checkBox1.TabIndex = 3;
+            this.checkBox1.Text = "Wanna see rectangles";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // Road
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -81,6 +92,7 @@ namespace RoadSimulator
             this.BackgroundImage = global::RoadSimulator.Properties.Resources.mapa_v6;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1051, 761);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.CarDeleteButton);
             this.Controls.Add(this.CarsCountLabel);
             this.Controls.Add(this.CarAddButton);
@@ -99,6 +111,7 @@ namespace RoadSimulator
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label CarsCountLabel;
         private System.Windows.Forms.Button CarDeleteButton;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 
