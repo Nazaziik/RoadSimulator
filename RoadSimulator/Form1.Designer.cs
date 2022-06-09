@@ -58,7 +58,7 @@ namespace RoadSimulator
             // 
             this.CarsCountLabel.AutoSize = true;
             this.CarsCountLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CarsCountLabel.Location = new System.Drawing.Point(84, 38);
+            this.CarsCountLabel.Location = new System.Drawing.Point(427, 12);
             this.CarsCountLabel.Name = "CarsCountLabel";
             this.CarsCountLabel.Size = new System.Drawing.Size(87, 21);
             this.CarsCountLabel.TabIndex = 1;

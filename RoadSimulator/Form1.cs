@@ -14,13 +14,12 @@ namespace RoadSimulator
 {
     public partial class Road : Form
     {
-        private static bool canGo = true;
         private static Thread trainThreaad;
         private Train mainTrain;
-        private Random random = new Random();
-        private Pen pen = new Pen(Color.Red);
-        private Car car;
+        private Random random = new();
+        private Pen pen = new(Color.Red);
         private Thread carThread;
+        public static bool canGo = true;
         public static List<Car> carList;
         public List<Thread> threadList;
 
@@ -112,7 +111,7 @@ namespace RoadSimulator
         #region CarOrganization
         public void InitiateCar()
         {
-            car = new Car();
+            Car car = new();
             carList.Add(car);
             carThread = new Thread(new ParameterizedThreadStart(CarThreadFunc));
             threadList.Add(carThread);
