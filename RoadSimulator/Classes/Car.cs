@@ -89,7 +89,7 @@ namespace RoadSimulator.Classes
 
         private void SetNewCar()
         {
-            _speed = random.Next(5, 25);///////////////////////////////Change speed
+            _speed = random.Next(5, 25);
             Bitmap demoBtm;
 
             if (_speed >= 5 && _speed < 10)
@@ -118,17 +118,17 @@ namespace RoadSimulator.Classes
                 _position.X = random.Next(-400, -100);/////////////////////////correct car spawn point
                 _position.Y = 205;/////////////////////correct car spawn point
                 btm.RotateFlip(RotateFlipType.Rotate90FlipY);
-                RFront = new Rectangle(new Point(_position.X + 35, _position.Y + 10), new Size(15, 35));/////////////////////////change rectangle size and pos
-                RBeck = new Rectangle(new Point(_position.X - 10, _position.Y + 10), new Size(15, 35));/////////////////////////change rectangle size and pos
+                RFront = new Rectangle(new Point(_position.X + 35, _position.Y + 10), new Size(15, 35));
+                RBeck = new Rectangle(new Point(_position.X - 10, _position.Y + 10), new Size(15, 35));
                 moveFromTop = true;
             }
             else
             {
-                _position.X = random.Next(1150, 1450);/////////////////////////
+                _position.X = random.Next(1150, 1450);/////////////////////////correct car spawn point
                 _position.Y = 610;/////////////////////correct car spawn point
                 btm.RotateFlip(RotateFlipType.Rotate90FlipX);
-                RFront = new Rectangle(new Point(_position.X - 15, _position.Y + 10), new Size(15, 35));/////////////////////////change rectangle size and pos
-                RBeck = new Rectangle(new Point(_position.X + 30, _position.Y + 10), new Size(15, 35));/////////////////////////change rectangle size and pos
+                RFront = new Rectangle(new Point(_position.X - 15, _position.Y + 10), new Size(15, 35));
+                RBeck = new Rectangle(new Point(_position.X + 30, _position.Y + 10), new Size(15, 35));
                 moveFromTop = false;
             }
 

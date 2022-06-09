@@ -28,6 +28,7 @@ namespace RoadSimulator
         public Road()
         {
             InitializeComponent();
+            this.Size = new Size(1067, 800);
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(30, 100);
             carList = new List<Car>();
