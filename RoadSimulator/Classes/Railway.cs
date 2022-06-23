@@ -14,8 +14,8 @@ namespace RoadSimulator.Classes
 
         static Railway()
         {
-            rectangle1 = new Rectangle(new Point(756, 274), new Size(55, 5));
-            rectangle2 = new Rectangle(new Point(824, 339), new Size(55, 5));
+            rectangle1 = new Rectangle(new Point(740, 260), new Size(65, 1));
+            rectangle2 = new Rectangle(new Point(834, 365), new Size(65, 1));
         }
     }
 }

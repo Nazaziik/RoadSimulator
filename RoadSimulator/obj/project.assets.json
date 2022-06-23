@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Learn\\Systemy operacyjne\\Project\\RoadSimulator\\RoadSimulator.csproj",
+      "projectUniqueName": "D:\\Learn\\6 Systemy operacyjne\\Project\\RoadSimulator\\RoadSimulator.csproj",
       "projectName": "RoadSimulator",
-      "projectPath": "D:\\Learn\\Systemy operacyjne\\Project\\RoadSimulator\\RoadSimulator.csproj",
+      "projectPath": "D:\\Learn\\6 Systemy operacyjne\\Project\\RoadSimulator\\RoadSimulator.csproj",
       "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-      "outputPath": "D:\\Learn\\Systemy operacyjne\\Project\\RoadSimulator\\obj\\",
+      "outputPath": "D:\\Learn\\6 Systemy operacyjne\\Project\\RoadSimulator\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

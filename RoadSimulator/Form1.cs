@@ -32,6 +32,7 @@ namespace RoadSimulator
             this.Location = new Point(30, 100);
             carList = new List<Car>();
             threadList = new List<Thread>();
+            //timer1.Start();
             InitiateTrain();
         }
 

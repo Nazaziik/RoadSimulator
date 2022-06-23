@@ -36,3 +36,41 @@ D:\Learn\Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\Sourc
 D:\Learn\Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\Jeep\JeepRight.png
 D:\Learn\Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\Jeep\JeepUp.png
 D:\Learn\Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\mapa_v6.png
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\RoadSimulator.exe
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\bus\BusDown.png
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\bus\BusLeft.png
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\bus\BusRight.png
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\bus\BusUp.png
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\car (fast)\CarFastDown.png
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\car (fast)\CarFastLeft.png
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\car (fast)\CarFastRight.png
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\car (fast)\CarFastUp.png
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\Car (slow)\CarSlowDown.png
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\Car (slow)\CarSlowLeft.png
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\Car (slow)\CarSlowRight.png
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\Car (slow)\CarSlowUp.png
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\Jeep\JeepDown.png
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\Jeep\JeepLeft.png
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\Jeep\JeepRight.png
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\Jeep\JeepUp.png
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\Train\TrainLeft.png
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\cars\Train\TrainRight.png
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\SourceToProject\mapa_v6.png
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\RoadSimulator.deps.json
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\RoadSimulator.runtimeconfig.json
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\RoadSimulator.runtimeconfig.dev.json
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\RoadSimulator.dll
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\ref\RoadSimulator.dll
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\bin\Debug\net5.0-windows\RoadSimulator.pdb
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\obj\Debug\net5.0-windows\RoadSimulator.csproj.AssemblyReference.cache
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\obj\Debug\net5.0-windows\RoadSimulator.Road.resources
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\obj\Debug\net5.0-windows\RoadSimulator.Properties.Resources.resources
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\obj\Debug\net5.0-windows\RoadSimulator.csproj.GenerateResource.cache
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\obj\Debug\net5.0-windows\RoadSimulator.GeneratedMSBuildEditorConfig.editorconfig
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\obj\Debug\net5.0-windows\RoadSimulator.AssemblyInfoInputs.cache
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\obj\Debug\net5.0-windows\RoadSimulator.AssemblyInfo.cs
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\obj\Debug\net5.0-windows\RoadSimulator.csproj.CoreCompileInputs.cache
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\obj\Debug\net5.0-windows\RoadSimulator.dll
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\obj\Debug\net5.0-windows\ref\RoadSimulator.dll
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\obj\Debug\net5.0-windows\RoadSimulator.pdb
+D:\Learn\6 Systemy operacyjne\Project\RoadSimulator\obj\Debug\net5.0-windows\RoadSimulator.genruntimeconfig.cache
